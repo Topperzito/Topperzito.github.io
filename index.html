@@ -1,198 +1,38 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Página Principal</title>
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Fira Code", monospace;
-}
-
-body {
-  background: radial-gradient(circle at top left, #0a0e14, #000);
-  background-image: url('/img/un castillo de fanta.png');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #e0e0e0;
-  overflow: hidden;
-}
-
-/* barra superior estilo GNOME */
-.desktop-bar {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 30px;
-  background: rgba(20, 25, 30, 0.85);
-  backdrop-filter: blur(10px);
-  color: #bbb;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 15px;
-  font-size: 0.9em;
-  letter-spacing: 0.5px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
-}
-
-.desktop-bar .time {
-  font-family: "Ubuntu", sans-serif;
-}
-
-/* ventana de terminal */
-.terminal {
-  width: 90%;
-  max-width: 900px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 0 40px rgba(0, 255, 100, 0.15), inset 0 0 30px rgba(0, 255, 70, 0.05);
-  background: rgba(10, 15, 20, 0.85);
-  backdrop-filter: blur(8px);
-  border: 1px solid #2a2f35;
-  animation: fadeIn 1s ease;
-}
-
-.terminal-header {
-  background: linear-gradient(180deg, #1f2327, #15181b);
-  height: 34px;
-  display: flex;
-  align-items: center;
-  padding: 0 12px;
-  border-bottom: 1px solid #333;
-}
-
-.btn {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  margin-right: 8px;
-}
-.btn.red { background: #ff5f56; box-shadow: 0 0 8px #ff5f56; }
-.btn.yellow { background: #ffbd2e; box-shadow: 0 0 8px #ffbd2e; }
-.btn.green { background: #27c93f; box-shadow: 0 0 8px #27c93f; }
-
-.terminal-header span {
-  color: #aaa;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 0.9em;
-  letter-spacing: 0.3px;
-}
-
-.terminal-body {
-  padding: 25px 40px;
-  color: #c8d8c8;
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-/* animación de escritura */
-.typewriter {
-  overflow: hidden;
-  border-right: .15em solid #33ff77;
-  white-space: nowrap;
-  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
-  color: #33ff77;
-  font-size: 1.6em;
-  text-shadow: 0 0 10px #00ff66;
-  margin-bottom: 25px;
-  text-align: center;
-}
-@keyframes typing { from { width: 0 } to { width: 100% } }
-@keyframes blink-caret { 50% { border-color: transparent } }
-
-/* foto central */
-.photo {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 30px;
-}
-.photo img {
-  width: 140px;
-  height: 140px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 2px solid #33ff77;
-  box-shadow: 0 0 20px #00ff55;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-.photo img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 35px #33ff77;
-}
-
-/* navegación */
-nav {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-nav a {
-  text-decoration: none;
-  color: #9ecbff;
-  padding: 10px 22px;
-  border: 1px solid #33ff77;
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  background: rgba(0,255,100,0.05);
-  font-weight: 500;
-  text-shadow: 0 0 5px rgba(0,255,100,0.4);
-}
-nav a:hover {
-  background: rgba(0,255,100,0.15);
-  color: #33ff77;
-  box-shadow: 0 0 20px #33ff77;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
-}
-
-@media (max-width: 700px) {
-  .terminal-body { padding: 20px; }
-  .typewriter { font-size: 1.3em; }
-  nav a { padding: 8px 16px; font-size: 0.9em; }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina principal</title>
 </head>
-<body>
-<div class="desktop-bar">
-  <div class="menu">🟢 Linux</div>
-  <div class="time">user@linux:~</div>
-  <div class="icons">⚙️ 🔋 🌐</div>
-</div>
+<body background="/img/un castillo de fanta.png">
+    <section>
+        <div class="Encabecazo" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);"> <!-- He usado el style para centrar la tabla en la pagina -->
+                <table border="2" align="center">
+                    <tr>
+                        <td width="100" align="center">
+                            <img src="img/b344cf48f3dc8cc832577442d67d7432.jpg" width="100%" height="auto" alt="Foto de: Pagina principal">
+                        </td>
 
-<div class="terminal">
-  <div class="terminal-header">
-    <div class="btn red"></div>
-    <div class="btn yellow"></div>
-    <div class="btn green"></div>
-    <span>Terminal — user@linux</span>
-  </div>
-  <div class="terminal-body">
-    <h1 class="typewriter">Bienvenido a pagina principal de Froggur</h1>
-    <div class="photo">
-      <img src="img/b344cf48f3dc8cc832577442d67d7432.jpg" alt="Foto principal">
-    </div>
-    <nav>
-      <a href="index.html">Inicio</a>
-      <a href="/trimestres/primertrimestre.html">Primer Trimestre</a>
-      <a href="#">Segundo Trimestre</a>
-      <a href="#">Tercer Trimestre</a>
-    </nav>
-  </div>
-</div>
+                        <td>
+                            <h1 align="center" style="color: white;">Pagina de entrada</h1>  <!-- He usado el style para cambiar el color del texto -->
+                        </td>
+
+                        <td>
+                            <div class="Enlaces de pagina">
+                                <nav>
+                                    <ul>  
+                                        <li><a style="color: white;" href="index.html">Inicio</a></li> <!-- He usado el style para cambiar el color del texto -->
+                                        <li><a style="color: white;" href="/trimestres/primertrimestre.html">Primer Trimestre</a></li>
+                                        <li><a style="color: white;" href="">Segundo Trimestre</a></li>
+                                        <li><a style="color: white;" href="">Tercer Trimestre</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+        </div>
+    </section>
 </body>
 </html>
