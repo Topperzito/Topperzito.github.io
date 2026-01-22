@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Práctica Hardware - DAW</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="navbar">
+        <a href="#">Inicio</a>
+        <a href="#">Procesadores</a>
+        <a href="#">Gráficas</a>
+        <a href="#">Contacto</a>
+    </div>
+
+    <div id="cabecera">
+        <h1>TODO HARDWARE 2025</h1>
+    </div>
+
+    <div id="capa-cookies">
+        <p>Esta web usa cookies de informática.</p>
+        <button onclick="ocultar()">Cerrar</button> 
+    </div>
+
+    <div id="contenedor">
+        
+        <div id="contenido-principal">
+            
+            <div class="caja">
+                <img src="img/procesador.jpg" class="derecha" width="200">
+                <h2>Procesadores Intel y AMD</h2>
+                <p>El procesador es el cerebro del ordenador. Actualmente AMD con sus Ryzen e Intel con sus Core i9 compiten por ser los más rápidos del mercado para gaming y trabajo pesado.</p>
+            </div>
+
+            <div class="caja">
+                <img src="img/grafica.jpg" class="izquierda" width="200">
+                <h2>Tarjetas Gráficas NVIDIA</h2>
+                <p>Las tarjetas gráficas (GPU) son esenciales para jugar. La serie RTX de NVIDIA permite usar Ray Tracing para que las luces y sombras se vean mucho más reales en los juegos.</p>
+            </div>
+
+        </div>
+
+        <div id="lateral">
+            <p>Marcas:</p>
+            <a href="#"><img src="img/intel.jpg" width="50"></a><br>
+            <a href="#"><img src="img/msi.jpg" width="50"></a><br>
+            <a href="#"><img src="img/gigabite.png" width="50"></a>
+        </div>
+
+    </div>
+
+    <div id="footer">
+        <p>Practica 5.1B extension float, Daniel ingresa 1 de daw</p>
+    </div>
+            <!--Chat gpt me ha ayudado a hacer el boton porque no me acordaba que se hacia con onclick...-->
+    <script>
+        function ocultar() {
+            document.getElementById('capa-cookies').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>

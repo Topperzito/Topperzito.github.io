@@ -1,0 +1,109 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('fondo.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+}
+
+
+#navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    padding: 15px;
+    text-align: center;
+}
+
+#navbar a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none; 
+}
+
+
+#navbar a:hover {
+    text-decoration: underline;
+}
+
+
+#cabecera {
+    margin-top: 80px; 
+    text-align: center;
+    color: white;
+    padding: 50px;
+}
+
+
+#capa-cookies {
+    background-color: lightgrey;
+    border: 2px solid black;
+    width: 300px;
+    padding: 10px;
+    position: absolute; 
+    top: 200px;
+    left: 40%;
+    z-index: 100;
+}
+
+#contenedor {
+    width: 900px;
+    margin: 0 auto; 
+    background-color: rgba(255, 255, 255, 0.9);
+    overflow: hidden; 
+    padding: 20px;
+}
+
+#contenido-principal {
+    float: left;
+    width: 750px;
+}
+
+.caja {
+    margin-bottom: 40px;
+    border-bottom: 1px solid gray;
+    padding-bottom: 10px;
+    overflow: hidden; 
+}
+
+
+.derecha {
+    float: right;
+    margin-left: 15px;
+}
+
+.izquierda {
+    float: left;
+    margin-right: 15px;
+}
+
+
+#lateral {
+    float: right;
+    width: 100px;
+    text-align: center;
+}
+
+#footer {
+    clear: both;
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+
+@media (max-width: 600px) {
+    #contenedor { width: 100%; }
+    #contenido-principal { width: 100%; float: none; }
+    #lateral { 
+        width: 100%; 
+        float: none; 
+        border-top: 1px solid black; 
+        padding-top: 10px;
+    }
+}
