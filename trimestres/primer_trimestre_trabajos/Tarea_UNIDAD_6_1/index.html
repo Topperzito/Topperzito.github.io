@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tareas de Javascript - Juan de Garay</title>
+    <style>
+        /* Estilo muy basico para que no parezca de chatgpt */
+        body {
+            background-color: #eeeeee;
+            font-family: sans-serif;
+            text-align: center;
+        }
+        .caja {
+            background-color: white;
+            border: 1px solid #ccc;
+            width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mis tareas de JS (UD 6.1)</h1>
+
+    <div class="caja">
+        <h3>Ejercicio 1</h3>
+        <p>Numeros del 1 al 100 y calculos</p>
+        <button onclick="ej1()">Ver en consola</button>
+    </div>
+
+    <div class="caja">
+        <h3>Ejercicio 2</h3>
+        <p>Calcular letra del DNI</p>
+        <button onclick="ej2()">Calcular ahora</button>
+    </div>
+
+    <div class="caja">
+        <h3>Ejercicio 3</h3>
+        <p>Cifrado Cesar (+3)</p>
+        <button onclick="ej3()">Cifrar texto</button>
+    </div>
+
+    <div class="caja">
+        <h3>Ejercicio 4</h3>
+        <p>Generador de claves</p>
+        <button onclick="ej4()">Generar clave</button>
+    </div>
+
+    <div>
+        <h1>"El index y la parte visual parecen de ChatGPT. No me suena que tuviéramos que hacer la parte gráfica, pero es para subirlo a la web."</h1>
+    </div>
+
+    <script>
+    // EJERCICIO 1
+    function ej1() {
+        let suma = 0;
+        console.log("Lista de numeros:");
+        for (let i = 1; i <= 100; i++) {
+            console.log(i);
+            suma = suma + i;
+        }
+        let media = suma / 100;
+        alert("Suma total: " + suma + " | Media: " + media);
+    }
+
+    // EJERCICIO 2
+    function ej2() {
+        let num = prompt("Introduce tu numero de DNI:");
+        let letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+        if (num.length == 8) {
+            let resto = num % 23;
+            let letra = letras.charAt(resto);
+            alert("Tu letra es: " + letra);
+        } else {
+            alert("Pon 8 numeros exactos");
+        }
+    }
+
+    // EJERCICIO 3
+    function ej3() {
+        let msg = prompt("Mensaje a cifrar:").toUpperCase();
+        let abc = "ABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+        let final = "";
+        for (let i = 0; i < msg.length; i++) {
+            let pos = abc.indexOf(msg[i]);
+            if (pos != -1) {
+                let nuevaPos = (pos + 3) % abc.length;
+                final += abc[nuevaPos];
+            } else {
+                final += msg[i];
+            }
+        }
+        alert("Resultado: " + final);
+    }
+
+    // EJERCICIO 4
+    function ej4() {
+        let min = "abcdefghijklmnopqrstuvwxyz";
+        let may = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        let num = "0123456789";
+        let esp = "!@#$%^&*()";
+        let pool = min + may + num + esp;
+        
+        // Empezamos con los obligatorios para no liarnos
+        let clave = "";
+        clave += may.charAt(Math.floor(Math.random() * may.length));
+        clave += num.charAt(Math.floor(Math.random() * num.length));
+        clave += esp.charAt(Math.floor(Math.random() * esp.length));
+
+        // Rellenamos hasta 10 caracteres por ejemplo
+        for (let i = 0; i < 7; i++) {
+            clave += pool.charAt(Math.floor(Math.random() * pool.length));
+        }
+        alert("Tu nueva clave es: " + clave);
+        console.log("Clave: " + clave);
+    }
+    </script>
+
+</body>
+</html>

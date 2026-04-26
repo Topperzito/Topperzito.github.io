@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Práctica 5.3 Bootstrap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-light border-bottom sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Mi Portfolio</a>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="#sobre-mi">Sobre mi</a>
+                <a class="nav-link" href="#proyectos">Proyectos</a>
+                <a class="nav-link" href="#contacto">Contacto</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="container text-center py-5">
+        <img src="images/wordpress-eljuande.png" class="img-fluid rounded-circle" width="140">
+        <h1 class="mt-3">Hola! soy Daniel!</h1>
+        <p>Incribete a mis cursos.</p>
+    </header>
+
+    <section id="sobre-mi" class="container py-4">
+        <h2>Sobre mi</h2>
+        <div class="row">
+            <div class="col-md-6 mb-3">
+                <div class="card p-3">
+                    <span class="material-symbols-outlined">html</span>
+                    <h5>HTML5 CSS</h5>
+                    <p>Soy un desarrollador web con experience en el diseño de aplicaciones web y mis proyectos.</p>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card p-3">
+                    <span class="material-symbols-outlined">javascript</span>
+                    <h5>JS Javascript</h5>
+                    <p>Me especializo en el diseño de aplicaciones web y me considero una persona proactiva.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="proyectos" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center">Proyectos</h2>
+            <div id="carouselExample" class="carousel slide border" data-bs-ride="carousel">
+                <div class="carousel-inner text-center p-4">
+                    <div class="carousel-item active">
+                        <img src="images/wordpress-eljuande.jpg" class="img-fluid mb-2" style="height: 150px;">
+                        <h5>XML-DTD</h5>
+                        <p>Una locura de proyectos de gran envergadura.</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/wordpress-eljuande.jpg" class="img-fluid mb-2" style="height: 150px;">
+                        <h5>Enlaces</h5>
+                        <p>Vendido todo garantizado.</p>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-dark"></span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto" class="container py-5">
+        <h2 class="text-center">Contacto</h2>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <form class="border p-3">
+                    <div class="mb-3">
+                        <label class="form-label">Nombre</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Mensaje</label>
+                        <textarea class="form-control" rows="2"></textarea>
+                    </div>
+                    <button type="button" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-center py-4">
+        <hr>
+        <p>UD05.3. PRÁCTICA BOOTSTRAP</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
