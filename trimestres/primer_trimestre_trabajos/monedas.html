@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio simple</title>
+</head>
+<body>
+    <h1>Conversor de divisas</h1>
+    <h2>con https://frankfurter.dev/</h2>
+    Cantidad: <input type="number" id="cantidad" value="1">
+    <br> <input type="button" value="Convertir" id="convertir">
+    <div id="resultado"></div>
+    <script>
+        let moneda="EUR"
+        let url=`https://api.frankfurter.dev/v1/latest?base=${moneda}`
+
+        let cantidad=document.getElementById("cantidad")
+        let convertirBtn=document.getElementById("convertir")
+        let resultado=document.getElementById("resultado")
+
+        // funciones
+        /*
+            Devuelve un li con los datos de la moneda
+        */
+        function creaElemento(valor, clave) {            
+            let total = Math.round(parseFloat(cantidad.value) * parseFloat(valor) * 100) / 100
+            
+            // creamos el elemento de lista
+            let liElement = document.createElement("li");
+            liElement.textContent = clave + ": " + total;
+               
+            return liElement
+        }
+
+        /*
+            Obtiene los cambios y los pinta en pantalla 
+        */
+        async function convertir(){        
+            // creamos la lista ul una sola vez
+            let listaUl = document.createElement("ul");
+            
+            fetch(url)
+                .then(response => response.json())
+                .then(datos => {
+                    console.log(datos);
+                    let cambios = Object.entries(datos.rates)                    
+
+                    cambios.forEach(([clave, valor]) => {
+                        console.log(clave, valor);
+                        
+                        // usamos la funcion para crear el li y lo metemos en la lista
+                        let nuevoItem = creaElemento(valor, clave);
+                        listaUl.appendChild(nuevoItem);
+                    });
+                    
+                    // metemos la lista entera en el div de resultado
+                    resultado.appendChild(listaUl);
+                })
+                .catch(error => console.log(error));                        
+        }
+
+        // eventos
+        convertirBtn.addEventListener("click", function(){
+            resultado.innerHTML = ""
+            convertir()
+        })
+
+    </script>
+</body>
+</html>
